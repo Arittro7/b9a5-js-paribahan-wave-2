@@ -42,5 +42,24 @@ function GrandTotal(elementId,price)
     let elementCost=parseInt(element)+parseInt(price);
     document.getElementById(elementId).innerText=parseInt(elementCost);
 }
-
+// Discount for NEW15 AND COUPLE20
+let discountApplied=false;
+function discountThePrice(elementId,APPLY)
+{
+    if(!discountApplied)
+    {
+        const element=document.getElementById(elementId);
+        const originalPrice=parseInt(element.innerText);
+        const disCounterPRICE=originalPrice*(APPLY/100);
+        const finalDiscount=originalPrice-disCounterPRICE;
+        document.getElementById('g-total').innerText=parseInt(finalDiscount);
+        discountApplied=true;
+    }
+}
+// function countClassSeat
+function classSeat(elementId,count)
+{
+    const element=document.getElementById('seatTwist');
+    element.innerText=count;
+}
 
